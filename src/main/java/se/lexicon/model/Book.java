@@ -77,8 +77,10 @@ public class Book {
 
     public String getBookInformation() {
         String borrowerInfo = (borrower != null) ? borrower.getPersonInformation() : "None";
-        return String.format("ID: %s, Title: %s, Author: %s, Available: %b, Borrower: %s",
-                id, title, author, avaliable, borrowerInfo);
+        return String.format(
+                "--Book Information--%nID: %s%nTitle: %s%nAuthor: %s%nAvailable: %b%nBorrower: %s%n--------------------",
+                id, title, author, avaliable, borrowerInfo
+        );
     }
 
 }
