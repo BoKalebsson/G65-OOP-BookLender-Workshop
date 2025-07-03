@@ -8,6 +8,10 @@ package se.lexicon.model;
 public class Book {
 
     // Attributes:
+    private String id;
+    private String title;
+    private String author;
+    private boolean avaliable;
 
     // Getters:
 
