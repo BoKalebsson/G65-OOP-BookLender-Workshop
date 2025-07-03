@@ -12,6 +12,7 @@ public class Book {
     private String id;
     private String title;
     private String author;
+    private Person borrower;
     private boolean avaliable;
 
     // Constructor:
@@ -19,6 +20,16 @@ public class Book {
         this.id = generateID();
         setTitle(title);
         setAuthor(author);
+        this.borrower = null;
+        this.avaliable = true;
+    }
+
+    public Book(String title, String author, Person borrower) {
+        this.id = generateID();
+        setTitle(title);
+        setAuthor(author);
+        this.borrower = borrower;
+        this.avaliable = (borrower == null);
     }
 
     // Getters:
@@ -59,6 +70,8 @@ public class Book {
     public String getBookInformation() {
         return String.format("ID: %s, Title: %s, Author: %s", id, title, author);
     }
+
+
 
 
 }
