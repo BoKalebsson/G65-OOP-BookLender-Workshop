@@ -74,21 +74,12 @@ public class Book {
 
     }
 
-
-    // Set borrower
-/*    if borrower icke tillgänglig
-    avaliable true
-
-    else if
-    tvärtom*/
-
     public void setAuthor(String author){
         if (author == null || author.trim().isEmpty()){
             throw new IllegalArgumentException("Author cannot be null or empty.");
         }
         this.author = author;
     }
-
     // Operations:
     private static String generateID() {
         return UUID.randomUUID().toString().substring(0,8).toUpperCase();
@@ -97,7 +88,7 @@ public class Book {
     public String getBookInformation() {
         String borrowerInfo = (borrower != null) ? borrower.getPersonInformation() : "None";
         return String.format(
-                "--Book Information--%nID: %s%nTitle: %s%nAuthor: %s%nAvailable: %b%nBorrower: %s%n--------------------",
+                "--Book Information--%nID: %s%nTitle: %s%nAuthor: %s%nAvailable: %b%nBorrower:%n%s%n--------------------",
                 id, title, author, avaliable, borrowerInfo
         );
     }

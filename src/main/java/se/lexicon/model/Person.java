@@ -61,17 +61,17 @@ public class Person {
     public boolean loanBook(Book book) {
         if(book.isAvailable()) {
             book.setBorrower(this);
-            System.out.println("Yepp!");
+            System.out.println("Book has been loaned.");
             return true;
         }
-        System.out.println("Nope!");
+        System.out.println("You cannot loan this book.");
         return false;
     }
 
     public boolean returnBook(Book book) {
         if(!book.isAvailable()) {
             book.setBorrower(null);
-            System.out.println("The book is returned.");
+            System.out.println("The book has been returned.");
             return true;
         }
         System.out.println("We could not return the book.");
