@@ -4,7 +4,19 @@ package se.lexicon.model;
  * to manage personal details and interactions with the library system.
  */
 public class Person {
-    // todo: needs completion
+
+    private static int personIdCounter = 0;
 
     // Attributes:
+    private int id;
+    private String firstName;
+    private String lastName;
+
+    // Getters:
+
+    // Setters:
+
+    // Operations:
+
+
 }

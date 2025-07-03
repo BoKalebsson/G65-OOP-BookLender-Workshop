@@ -6,7 +6,14 @@ package se.lexicon.model;
  * to manage book-related information and operations.
  */
 public class Book {
-    // todo: needs completion
 
     // Attributes:
+
+    // Getters:
+
+    // Setters:
+
+    // Operations:
+
+
 }
