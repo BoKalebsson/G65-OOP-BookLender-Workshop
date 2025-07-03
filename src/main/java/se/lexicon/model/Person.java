@@ -20,8 +20,8 @@ public class Person {
     }
 
     // Getters:
-    public int getId() {
-        return this.id;
+    public static int getId() {
+        return ++sequencer;
     }
 
     public String getFirstName() {

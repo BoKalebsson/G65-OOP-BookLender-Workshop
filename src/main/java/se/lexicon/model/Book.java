@@ -13,7 +13,7 @@ public class Book {
     private String title;
     private String author;
     private Person borrower;
-    private boolean avaliable;
+    private boolean available;
 
     // Constructor:
     public Book(String title, String author) {
@@ -21,7 +21,7 @@ public class Book {
         setTitle(title);
         setAuthor(author);
         this.borrower = null;
-        this.avaliable = true;
+        this.available = true;
     }
 
     public Book(String title, String author, Person borrower) {
@@ -29,7 +29,7 @@ public class Book {
         setTitle(title);
         setAuthor(author);
         this.borrower = borrower;
-        this.avaliable = (borrower == null);
+        this.available = (borrower == null);
     }
 
     // Getters:
@@ -52,7 +52,7 @@ public class Book {
     }
 
     public boolean isAvailable() {
-        return avaliable;
+        return available;
     }
 
     // Setters:
@@ -63,33 +63,33 @@ public class Book {
         this.title = title;
     }
 
-    public void setBorrower(Person borrower) {
-        if(borrower == null) {
-            avaliable = true;
-        }
-        else {
-            avaliable = false;
-        }
-        this.borrower = borrower;
-
-    }
-
     public void setAuthor(String author){
         if (author == null || author.trim().isEmpty()){
             throw new IllegalArgumentException("Author cannot be null or empty.");
         }
         this.author = author;
     }
+
+    public void setBorrower(Person borrower) {
+        if(borrower == null) {
+            available = true;
+        }
+        else {
+            available = false;
+        }
+        this.borrower = borrower;
+    }
+
     // Operations:
     private static String generateID() {
         return UUID.randomUUID().toString().substring(0,8).toUpperCase();
     }
 
     public String getBookInformation() {
-        String borrowerInfo = (borrower != null) ? borrower.getPersonInformation() : "None";
+        String borrowerName = (borrower != null) ? borrower.getFirstName() + " " + borrower.getLastName() : "None";
         return String.format(
-                "--Book Information--%nID: %s%nTitle: %s%nAuthor: %s%nAvailable: %b%nBorrower:%n%s%n--------------------",
-                id, title, author, avaliable, borrowerInfo
+                "--Book Information--%nID: %s%nTitle: %s%nAuthor: %s%nAvailable: %b%nBorrower: %s%n--------------------",
+                id, title, author, available, borrowerName
         );
     }
 
