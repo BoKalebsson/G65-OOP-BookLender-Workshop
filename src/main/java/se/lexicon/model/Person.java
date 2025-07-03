@@ -14,7 +14,7 @@ public class Person {
 
     // Constructor:
     public Person(String firstName, String lastName) {
-        this.id = ++sequencer;
+        this.id = getNextId();
         setFirstName(firstName);
         setLastName(lastName);
     }
@@ -32,6 +32,10 @@ public class Person {
     public String getLastName() {
 
         return this.lastName;
+    }
+
+    private int getNextId() {
+        return ++sequencer;
     }
 
     // Setters:

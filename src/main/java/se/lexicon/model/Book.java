@@ -1,5 +1,7 @@
 package se.lexicon.model;
 
+import java.util.UUID;
+
 /**
   * This class represents a Book model with properties and methods
  * to manage book-related information and operations.
@@ -14,7 +16,7 @@ public class Book {
 
     // Constructor:
     public Book(String title, String author) {
-        this.id = id;
+        this.id = generateID();
         setTitle(title);
         setAuthor(author);
     }
@@ -50,6 +52,9 @@ public class Book {
     }
 
     // Operations:
+    private static String generateID() {
+        return UUID.randomUUID().toString().substring(0,8).toUpperCase();
+    }
 
 
 }
