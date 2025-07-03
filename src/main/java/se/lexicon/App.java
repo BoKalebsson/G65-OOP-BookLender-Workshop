@@ -22,6 +22,11 @@ public class App {
         Book book2 = new Book("Bok om skruvmejslar", "Elin Johansson");
         System.out.println(book2.getBookInformation());
 
+        Book book3 = new Book("Bok om pannkakor", "Per Moberg", null);
+        System.out.println(book3.getBookInformation());
+
+        Book book4 = new Book("Bok om pannkakor", "Per Moberg", person1);
+        System.out.println(book4.getBookInformation());
     }
 
 }
