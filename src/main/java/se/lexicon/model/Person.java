@@ -58,5 +58,24 @@ public class Person {
         return String.format("--Person Information--%nID: %d%nName: %s %s%n--------------------", id, firstName, lastName);
     }
 
+    public boolean loanBook(Book book) {
+        if(book.isAvailable()) {
+            book.setBorrower(this);
+            System.out.println("Yepp!");
+            return true;
+        }
+        System.out.println("Nope!");
+        return false;
+    }
+
+    public boolean returnBook(Book book) {
+        if(!book.isAvailable()) {
+            book.setBorrower(null);
+            System.out.println("The book is returned.");
+            return true;
+        }
+        System.out.println("We could not return the book.");
+        return false;
+    }
 
 }

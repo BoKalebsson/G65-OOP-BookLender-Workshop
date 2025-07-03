@@ -63,6 +63,25 @@ public class Book {
         this.title = title;
     }
 
+    public void setBorrower(Person borrower) {
+        if(borrower == null) {
+            avaliable = true;
+        }
+        else {
+            avaliable = false;
+        }
+        this.borrower = borrower;
+
+    }
+
+
+    // Set borrower
+/*    if borrower icke tillgänglig
+    avaliable true
+
+    else if
+    tvärtom*/
+
     public void setAuthor(String author){
         if (author == null || author.trim().isEmpty()){
             throw new IllegalArgumentException("Author cannot be null or empty.");
@@ -82,5 +101,6 @@ public class Book {
                 id, title, author, avaliable, borrowerInfo
         );
     }
+
 
 }
