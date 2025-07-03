@@ -47,6 +47,14 @@ public class Book {
         return this.author;
     }
 
+    public Person getBorrower() {
+        return borrower;
+    }
+
+    public boolean isAvailable() {
+        return avaliable;
+    }
+
     // Setters:
     public void setTitle(String title){
         if (title == null || title.trim().isEmpty()){
@@ -68,10 +76,8 @@ public class Book {
     }
 
     public String getBookInformation() {
-        return String.format("ID: %s, Title: %s, Author: %s", id, title, author);
+        return String.format("ID: %s, Title: %s, Author: %s, Available: %b",
+                id, title, author, avaliable);
     }
-
-
-
 
 }
