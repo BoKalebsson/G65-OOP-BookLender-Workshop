@@ -71,13 +71,22 @@ public class Book {
     }
 
     public void setBorrower(Person borrower) {
-        if(borrower == null) {
-            available = true;
+        // If the same person already has this book, do nothing.
+        if (this.borrower == borrower) {
+            System.out.println("This person already has the book. No action taken.");
+            return;
         }
-        else {
-            available = false;
+
+        // If null is sent in → The book is returned.
+        if (borrower == null) {
+            this.borrower = null;
+            this.available = true;
+            return;
         }
+
+        // Set to a new borrower and mark as unavailable.
         this.borrower = borrower;
+        this.available = false;
     }
 
     // Operations:

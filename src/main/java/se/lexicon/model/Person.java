@@ -59,20 +59,31 @@ public class Person {
     }
 
     public boolean loanBook(Book book) {
-        if(book.isAvailable()) {
+        if (book.isAvailable()) {
             book.setBorrower(this);
             System.out.println("Book has been loaned.");
             return true;
         }
+
+        if (book.getBorrower() == this) {
+            System.out.println("You already have this book.");
+            return false;
+        }
+
         System.out.println("You cannot loan this book.");
         return false;
     }
 
     public boolean returnBook(Book book) {
-        if(!book.isAvailable()) {
-            book.setBorrower(null);
-            System.out.println("The book has been returned.");
-            return true;
+        if (!book.isAvailable()) {
+            if (book.getBorrower() == this) {  // Only the right person should be able to return the book.
+                book.setBorrower(null);
+                System.out.println("The book has been returned.");
+                return true;
+            } else {
+                System.out.println("You cannot return a book you don't have.");
+                return false;
+            }
         }
         System.out.println("We could not return the book.");
         return false;
