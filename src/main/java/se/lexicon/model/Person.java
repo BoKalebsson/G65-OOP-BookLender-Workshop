@@ -55,7 +55,7 @@ public class Person {
 
     // Operations:
     public String getPersonInformation() {
-        return this.firstName + " " + this.lastName;
+        return String.format("ID: %d, Name: %s %s", id, firstName, lastName);
     }
 
 

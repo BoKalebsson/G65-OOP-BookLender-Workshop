@@ -56,5 +56,9 @@ public class Book {
         return UUID.randomUUID().toString().substring(0,8).toUpperCase();
     }
 
+    public String getBookInformation() {
+        return String.format("ID: %s, Title: %s, Author: %s", id, title, author);
+    }
+
 
 }
